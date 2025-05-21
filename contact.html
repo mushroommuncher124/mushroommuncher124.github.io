@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact</coofee is life>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="images/random.png"
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>lily-anne's website for dumbies</h1>
+      <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Contact me dude, do it</h2>
+    <p>Email: lily.crawford@henleyhs.sa.edu.au</p>
+    <p>Phone: no no dont touch me there this is my no no square</p>
+
+    <button onclick="toggleMusic()" class="button" id="musicButton">🔊 Play Music</button>
+
+    <audio id="bgMusic" loop>
+      <source src="music.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+  </main>
+
+  <footer>
+    <p>&copy; lily-anne's website</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
+    }
+
+    let musicPlaying = false;
+    const music = document.getElementById("bgMusic");
+    const btn = document.getElementById("musicButton");
+
+    function toggleMusic() {
+      if (!musicPlaying) {
+        music.play();
+        btn.textContent = "🔇 Pause Music";
+      } else {
+        music.pause();
+        btn.textContent = "🔊 Play Music";
+      }
+      musicPlaying = !musicPlaying;
+    }
+  </script>
+</body>
+</html>

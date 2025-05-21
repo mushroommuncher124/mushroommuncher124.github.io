@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" type="image/x-icon" href="images/random.png"
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>welcome to whatever this is!</h1>
+      <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <h</h2>
+    <p>This is the homepage of a simple website made with HTML and CSS.</p>
+    
+    <button onclick="toggleMusic()" class="button" id="musicButton">🔊 Play Music</button>
+    
+    <a href="https://www.youtube.com/watch?v=41O_MydqxTU" class="button" target="_blank">seecret</a>
+    <a href="https://au.pinterest.com/STURN_GIRL/" class="button" target="_blank">secret</a>
+    <a href="https://www.youtube.com/watch?v=BijqEg7q6oI" class="button" target="_blank">Secret Link</a>
+
+    <audio id="bgMusic" loop>
+      <source src="music.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+  </main>
+  <footer>
+    <p>&copy; whatever this is</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
+    }
+
+    let musicPlaying = false;
+    const music = document.getElementById("bgMusic");
+    const btn = document.getElementById("musicButton");
+
+    function toggleMusic() {
+      if (!musicPlaying) {
+        music.play();
+        btn.textContent = "🔇 Pause Music";
+      } else {
+        music.pause();
+        btn.textContent = "🔊 Play Music";
+      }
+      musicPlaying = !musicPlaying;
+    }
+  </script>
+</body>
+</html>
